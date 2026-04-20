@@ -1,177 +1,89 @@
-# E-Commerce Data Pipeline and Analytics Dashboard
+# E-Commerce Sales Dashboard
 
 ## Overview
-This project presents a complete end-to-end data engineering and analytics solution built using Databricks Delta Live Tables (DLT) and the Medallion Architecture (Bronze, Silver, Gold).
+This dashboard presents key business insights derived from the Gold layer of the data pipeline. It provides an interactive view of sales performance, customer behavior, product trends, and operational efficiency.
 
-The pipeline processes raw e-commerce data into clean, structured datasets and delivers business insights through an interactive analytics dashboard.
-
----
-
-## Architecture
-
-Raw Data (CSV)
-    ↓
-Bronze Layer (Ingestion)
-    ↓
-Silver Layer (Cleaning & Transformation)
-    ↓
-Gold Layer (Aggregations & Insights)
-    ↓
-Dashboard & Analytics
+The dashboard is designed to support data-driven decision-making through clear visualizations and aggregated metrics.
 
 ---
 
-## Technology Stack
+## Dashboard Preview
 
-- Databricks  
-- Delta Live Tables (DLT)  
-- PySpark  
-- Delta Lake  
-- SQL  
-- Databricks Dashboard  
+### Main Dashboard
+![Dashboard Page 1](./E-Commerce%20Dashboard.png)
 
----
-
-## Data Sources
-
-The pipeline uses multiple datasets:
-
-- Customers  
-- Orders  
-- Order Items  
-- Payments  
-- Products  
+### Detailed Analysis
+![Dashboard Page 2](./E-Commerce%20Dashboard-1.png)
 
 ---
 
-## Bronze Layer — Raw Data Ingestion
+## Key Metrics
 
-### Objective
-Ingest raw CSV data into Delta tables without transformations.
-
-### Tables
-- customers_bronze  
-- orders_bronze  
-- order_items_bronze  
-- payments_bronze  
-- products_bronze  
+- **Total Revenue**: Overall revenue generated from all orders  
+- **Total Orders**: Number of orders processed  
+- **Total Customers**: Unique customer count  
 
 ---
 
-## Silver Layer — Data Cleaning and Transformation
+## Dashboard Features
 
-### Objective
-Clean, validate, and integrate data from multiple sources.
-
-### Key Transformations
-- Duplicate removal  
-- Null handling  
-- Data type casting  
-- Filtering invalid records  
-- Joining datasets  
-
-### Final Table
-- ecommerce_silver  
-
-### Derived Columns
-- order_year  
-- order_month  
-- total_price  
-
----
-
-## Gold Layer — Business Insights
-
-### Objective
-Generate analytics-ready datasets for reporting.
-
-### Key Tables
-
-#### Customer Analytics
-- top_customers  
-- repeat_customers  
-- customer_segments  
-
-#### Revenue Analysis
-- monthly_revenue  
-- top_cities  
-
-#### Product Insights
-- top_products  
-- category_performance  
-- top_product_per_category  
-
-#### Operations
-- delivery_performance  
-
-#### Payment Analysis
-- payment_analysis  
-
----
-
-## Dashboard
-
-### Overview Dashboard
-
-![Dashboard Page 1](./assets/dashboard_page1.png)
-
-### Detailed Analytics Dashboard
-
-![Dashboard Page 2](./assets/dashboard_page2.png)
-
----
-
-## Dashboard Insights
-
-- Total revenue, orders, and customer overview  
-- Monthly revenue trends over time  
+### Revenue Analysis
+- Monthly revenue trend visualization  
 - Revenue distribution across cities  
-- Payment method analysis  
-- Order status distribution  
-- Delivery performance insights  
-- Top product categories and sales distribution  
-- State-wise category performance  
+- Identification of high-performing regions  
+
+### Order Insights
+- Order status distribution (delivered, cancelled, shipped, etc.)  
+- Order volume trends over time  
+
+### Customer Insights
+- Customer distribution by city  
+- Identification of repeat and high-value customers  
+
+### Product Analysis
+- Top selling product categories  
+- Category-wise performance breakdown  
+- Product demand insights  
+
+### Payment Analysis
+- Distribution of payment methods  
+- Contribution of each payment type to total revenue  
+
+### Delivery Performance
+- Delivery delay distribution  
+- Operational efficiency insights  
 
 ---
 
-## Project Structure
+## Insights Derived
 
-project/
-│
-├── bronze_layer.py  
-├── silver_layer.py  
-├── gold_layer.py  
-├── datasets/  
-├── assets/  
-│   ├── dashboard_page1.png  
-│   └── dashboard_page2.png  
-└── README.md  
+- Majority of orders are successfully delivered  
+- Certain cities contribute significantly to revenue  
+- A few product categories dominate total sales  
+- Credit card is the most preferred payment method  
+- Delivery delays are mostly within expected ranges  
 
 ---
 
-## Execution Steps
+## Usage
 
-1. Upload datasets to Databricks  
-2. Create a Delta Live Tables pipeline  
-3. Add Bronze, Silver, and Gold scripts  
-4. Run the pipeline  
-5. Build dashboard using Gold tables  
+1. Use filters such as:
+   - Order Month  
+   - Order Year  
+   - Order Status  
+   - Customer City  
 
----
+2. Interact with charts to explore trends and patterns  
 
-## Outcomes
-
-- End-to-end automated data pipeline  
-- Clean and unified analytical dataset  
-- Interactive dashboard for business insights  
-- Customer segmentation and revenue analysis  
-- Product and operational performance insights  
+3. Use insights for:
+   - Business strategy  
+   - Customer targeting  
+   - Operational improvements  
 
 ---
 
-## Future Enhancements
+## Tools Used
 
-- Real-time streaming pipeline  
-- Integration with external BI tools  
-- Advanced data quality checks  
-- CI/CD pipeline integration  
+- Databricks SQL Dashboard  
+- Delta Live Tables (Data Source)  
+- PySpark (Data Processing)  
