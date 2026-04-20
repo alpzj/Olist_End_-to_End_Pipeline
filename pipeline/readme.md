@@ -121,24 +121,6 @@ Create aggregated datasets optimized for analytics and reporting.
 
 ---
 
-## Project Structure
-
-project/
-│
-├── bronze_layer.py  
-├── silver_layer.py  
-├── gold_layer.py  
-├── datasets/  
-│   ├── customers.csv  
-│   ├── orders.csv  
-│   ├── order_items.csv  
-│   ├── payments.csv  
-│   └── products.csv  
-│
-└── README.md  
-
----
-
 ## Execution Steps
 
 1. Upload datasets to Databricks  
